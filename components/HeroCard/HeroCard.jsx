@@ -1,6 +1,24 @@
 import React from "react";
-import styles from "./HeroCard.modules.css";
+import styles from "./HeroCard.module.css";
 import { getConfig } from "../../config";
+import Image from "next/image";
+
+import linkedInImg from "@/public/images/person.jpg";
+import githubImg from "@/public/images/person.jpg";
+import personalImage from "@/public/images/person.jpg";
+import Link from "next/link";
+import {
+  faEnvelope,
+  faLocationDot,
+  faMailReply,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const imageMap = {
+  linkedInImg: linkedInImg,
+  githubImg: githubImg,
+  personalImage: personalImage,
+};
 
 function getTags(config) {
   var items = [];
@@ -22,8 +40,16 @@ function getSocial(config) {
   for (const item in config.social) {
     items.push(
       <div key={i}>
-        <div className={styles.img}>{config.social[item][0]}</div>
-        <div className={styles.text}>{config.social[item][1]}</div>
+        <div className={styles.img}>
+          <Link href={config.social[item][1]}>
+            <Image
+              src={imageMap[config.social[item][0]]}
+              alt={config.social[item][1]}
+              width={40}
+              height={40}
+            />
+          </Link>
+        </div>
       </div>
     );
     i++;
@@ -33,20 +59,33 @@ function getSocial(config) {
 export function HeroCard() {
   const config = getConfig();
   return (
-    <div>
+    <div className={styles.parent}>
       <div className={styles.leftPane}>
-        <div className={styles.hello}>Hello There</div>
+        <div className={styles.hello}>Hello there! I&#39;m</div>
         <div className={styles.name}>{config.name}</div>
         <div className={styles.tagList}>{getTags(config)}</div>
-        <div className={styles.email}>
-          <div className={styles.icon}>img</div>
-          {config.email}
+        <div className={styles.social}>
+          <div className={styles.email}>
+            <div className={styles.icon}>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </div>
+            {config.email}
+          </div>
+          <div className={styles.location}>
+            <div className={styles.icon}>
+              <FontAwesomeIcon icon={faLocationDot} />
+            </div>
+            {config.location}
+          </div>
         </div>
-        <div className={styles.location}>
-          <div className={styles.icon}>img</div>
-          {config.location}
-        </div>
-        <div className={styles.social}>{getSocial(config)}</div>
+        <div className={styles.connect}>{getSocial(config)}</div>
+      </div>
+      <div className={styles.rightPane}>
+        <Image
+          className={styles.personalImage}
+          src={imageMap[config.personalImage]}
+          alt={"Image Of " + config.name}
+        ></Image>
       </div>
     </div>
   );

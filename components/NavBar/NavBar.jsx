@@ -1,6 +1,6 @@
 import React from "react";
 import { getButtonList } from "./buttonList";
-import styles from "./NavBar.modules.css";
+import styles from "./NavBar.module.css";
 import { getConfig } from "../../config";
 import {
   Navbar,
@@ -10,18 +10,23 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
+  Button,
 } from "@nextui-org/react";
+import Link from "next/link";
 
 function getItems() {
   var items = [];
   var i = 0;
-  for (const key in getButtonList()) {
+  var buttons = getButtonList();
+  for (const key in buttons) {
     items.push(
-      <div className={styles.buttonSmall} key={i}>
-        <a href={getButtonList[key]} className={styles.noLink}>
-          {key}
-        </a>
-      </div>
+      <NavbarItem key={i}>
+        <Button className={styles.buttons}>
+          <Link href={buttons[key]} className={styles.noLink}>
+            {key}
+          </Link>
+        </Button>
+      </NavbarItem>
     );
     i++;
   }
@@ -30,12 +35,13 @@ function getItems() {
 
 export function NavBar() {
   return (
-    <NavBar>
-      <div className={styles.background}>
-        <h1>Hello NextJS</h1>
-        {/* <div className={styles.name}>{getConfig().name}</div> */}
-        {/* <div className={styles.buttons}>{getItems()}</div> */}
-      </div>
-    </NavBar>
+    <Navbar className={styles.navBar}>
+      {/* <div className={styles.background}> */}
+      <NavbarBrand className={styles.name}>{getConfig().name}</NavbarBrand>
+      <NavbarContent className={styles.navBarButtons}>
+        {getItems()}
+      </NavbarContent>
+      {/* </div> */}
+    </Navbar>
   );
 }

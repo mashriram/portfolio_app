@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./About.modules.css";
+import styles from "./About.module.css";
 import { getConfig } from "../../config";
 
 function getTags(config) {

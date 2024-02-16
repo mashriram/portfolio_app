@@ -5,9 +5,10 @@ export function getConfig() {
     email: "mashriram@gmail.com",
     phone: "9840238874",
     location: "Chennai,TamilNadu,India",
+    personalImage: "personalImage",
     social: {
-      linkedin: ["image", "https://linkedin.com"],
-      github: ["image", "https://github.com"],
+      linkedin: ["linkedInImg", "https://linkedin.com"],
+      github: ["githubImg", "https://github.com"],
     },
     aboutMeImage: "image",
     aboutMeText:
