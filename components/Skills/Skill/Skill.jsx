@@ -1,17 +1,24 @@
 import React from "react";
 import styles from "./Skill.modules.css";
-import { Progress } from "@nextui-org/react";
+import { Accordion, AccordionItem, Progress } from "@nextui-org/react";
 
-export function Skill({ label, value }) {
-  return (
-    <div className={styles.skill}>
-      <Progress
-        size="md"
-        value={value}
-        color="success"
-        label={label}
-        showValueLabel={true}
-      />
-    </div>
-  );
+export function Skill({ title, skills }) {
+    return (
+        <div className={styles.skill}>
+            <Accordion>
+                <AccordionItem key="1" aria-label={title} title={title}>
+                    {skills.map((skill, idx) => (
+                        <Progress
+                            key={idx}
+                            size="md"
+                            value={skill.rating}
+                            color="success"
+                            label={skill.name}
+                            showValueLabel={true}
+                        />
+                    ))}
+                </AccordionItem>
+            </Accordion>
+        </div>
+    );
 }

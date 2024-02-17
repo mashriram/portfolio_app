@@ -1,1 +1,47 @@
+.parent {
+    padding: 8rem 3rem 3rem 3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+}
+.left {
+    position: relative;
+    width: 350px;
+    /* height: 275px; */
+    flex: 1;
+    border-radius: 25px;
+    box-shadow: 20px 20px 100px orange;
+}
+.right {
+    flex: 1;
+}
+.heading {
+    font-size: 2rem;
+    font-weight: 500;
+}
+.content {
+    padding: 2rem;
+}
 
+.tagsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1.5rem;
+    padding: 1rem 2rem 3rem 2rem;
+}
+
+.tag {
+    padding: 0.5rem;
+    border: 1px solid orange;
+    border-radius: 10px;
+    color: rgb(255, 200, 100);
+}
+.downloadButton {
+    color: black;
+    background: orange;
+    box-shadow: 4px 4px 16px orange;
+}
+.downloadButtonParent {
+    padding: 0rem 2rem 8rem 2rem;
+}

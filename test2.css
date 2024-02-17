@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+}
+header {
+    width: 100vw;
+    background-color: green;
+    padding: 1rem;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+.bodyContent {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    max-width: calc(100% - 6rem);
+    background-color: blue;
+    color: azure;
+    font-size: 1.5rem;
+}
+
+.content {
+    /* Your content styles go here */
+}

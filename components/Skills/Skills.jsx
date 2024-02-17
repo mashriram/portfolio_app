@@ -2,22 +2,22 @@ import React from "react";
 import { getConfig } from "@/config";
 import { Skill } from "./Skill/Skill";
 
-
-function getAllSkills(subject){
-    var skills = []
+function getAllSkills() {
+    var skills = [];
     var config = getConfig();
-    var i = 0;
-    for(var i in config.technicalSkills.su){
+    for (const techSkill of config.technicalSkills) {
         skills.push(
-            <Skill key={i} value={config}></Skill>
-        )
-        i++;
+            <Skill
+                key={techSkill.title}
+                title={techSkill.title}
+                skills={techSkill.skills}
+            />
+        );
     }
-  return (
-    
-
-  );
+    return skills;
 }
 export function Skills() {
-    
+    var skills = getAllSkills();
+    console.log(skills);
+    return [...skills];
 }

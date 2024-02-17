@@ -1,15 +1,20 @@
 .navBar {
-  background-color: orange;
+    background-color: orange;
 }
 .buttons {
-  font-size: 16px;
-  font-weight: 500;
-  background-color: black;
-  color: rgb(255, 200, 100);
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    color: rgb(255, 200, 100);
 }
 .navBarbuttons {
-  padding: 0rem 0rem 0rem 2rem;
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
+    padding: 0rem 0rem 0rem 2rem;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.name {
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
 }
