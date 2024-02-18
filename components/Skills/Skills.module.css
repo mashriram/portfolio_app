@@ -1,0 +1,19 @@
+.skills {
+  padding: 2rem 0rem 2rem 0rem;
+  width: 50vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.parent {
+  display: flex;
+  justify-content: center;
+}
+.heading {
+  font-size: 2rem;
+  padding: 2rem 2rem 2rem 2rem;
+  color: orange;
+  font-weight: 700;
+  text-align: center;
+}
