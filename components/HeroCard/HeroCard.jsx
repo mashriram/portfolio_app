@@ -7,8 +7,9 @@ import linkedInImg from "@/public/images/person.jpg";
 import githubImg from "@/public/images/person.jpg";
 import personalImage from "@/public/images/person.jpg";
 import Link from "next/link";
-import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const imageMap = {
     linkedInImg: linkedInImg,
@@ -38,11 +39,9 @@ function getSocial(config) {
             <div key={i}>
                 <div className={styles.img}>
                     <Link href={config.social[item][1]}>
-                        <Image
-                            src={imageMap[config.social[item][0]]}
-                            alt={config.social[item][1]}
-                            width={40}
-                            height={40}
+                        <FontAwesomeIcon
+                            icon={config.social[item][2]}
+                            size="2xl"
                         />
                     </Link>
                 </div>
@@ -66,6 +65,12 @@ export function HeroCard() {
                             <FontAwesomeIcon icon={faEnvelope} />
                         </div>
                         {config.email}
+                    </div>
+                    <div className={styles.phone}>
+                        <div className={styles.icon}>
+                            <FontAwesomeIcon icon={faPhone} />
+                        </div>
+                        {config.phone}
                     </div>
                     <div className={styles.location}>
                         <div className={styles.icon}>

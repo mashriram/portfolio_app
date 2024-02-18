@@ -12,10 +12,10 @@ export default function Home() {
       <NavBar className={styles.navBar}></NavBar>
       <div className={styles.parent}>
         <div className={styles.content}>
-          <HeroCard></HeroCard>
-          <About></About>
+          <HeroCard/>
+          <About/>
           <Skills />
-          <Certifications></Certifications>
+          <Certifications/>
         </div>
       </div>
     </div>

@@ -23,7 +23,7 @@ function getTags(config) {
 export function About() {
     var config = getConfig();
     return (
-        <div className={styles.parent}>
+        <div className={styles.parent} id="about">
             <div className={styles.left}>
                 <Image src={aboutMeImg} alt="aboutMe" fill />
             </div>
@@ -31,7 +31,7 @@ export function About() {
                 <h3 className={styles.heading}> About Me</h3>
                 <div className={styles.content}>{config.aboutMeText}</div>
                 <div className={styles.tagsContainer}>{getTags(config)}</div>
-                <div className={styles.downloadButtonParent}>
+                {/* <div className={styles.downloadButtonParent}>
                     <Button className={styles.downloadButton}>
                         <Link
                             href={config.downloadUrl}
@@ -41,7 +41,7 @@ export function About() {
                             Download CV
                         </Link>
                     </Button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
